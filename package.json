@@ -1,0 +1,61 @@
+{
+  "name": "@tasoskakour/boiler-js",
+  "version": "1.0.0",
+  "description": "A boiler-js structure that helps with building and publishing npm modules.",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "xo",
+    "test": "ava",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasoskakour/boiler-js.git"
+  },
+  "keywords": [
+    "boiler",
+    "js",
+    "npm"
+  ],
+  "author": {
+    "name": "Tasos Kakouris",
+    "email": "tasoskakour@gmail.com",
+    "website": "https://tasoskakour.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tasoskakour/boiler-js/issues"
+  },
+  "homepage": "https://github.com/tasoskakour/boiler-js#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "husky": "^3.0.7",
+    "lint-staged": "^9.4.0",
+    "nodemon": "^1.19.2",
+    "standard-version": "^7.0.0",
+    "xo": "^0.25.3"
+  },
+  "lint-staged": {
+    "*": [
+      "xo --fix",
+      "git add"
+    ]
+  },
+  "xo": {
+    "prettier": true,
+    "envs": [
+      "node",
+      "browser"
+    ],
+    "rules": {
+      "camelcase": 1
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  }
+}
